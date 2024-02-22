@@ -87,9 +87,23 @@ int main(int argc, char* argv[])
 
     // Test out your linked list code
 
+    struct isOdd {
+    bool operator()(int num) const {
+        return num % 2 != 0;
+    }};
 
+    cout <<"Filtered list: ";
+    //head = llfilter(head, isOdd{});
+    print(head);
 
-    
+    Node* smaller = NULL;
+    Node* bigger = NULL;
+    llpivot(head,smaller,bigger,3);
+    print(head); //out of bounds does not work!!!
+    print(smaller); //first val included in smaller list
+    print(bigger);
+
+    //8 9 12 19 6 8 with a blank line after
     return 0;
 
 }
